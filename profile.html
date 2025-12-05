@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-dice"></i>
+                Socket Gambling
+            </div>
+            <nav class="nav">
+                <a href="/profile" class="nav-link active">
+                    <i class="fas fa-user"></i> profile
+                </a>
+                <a href="/players" class="nav-link">
+                    <i class="fas fa-users"></i> players
+                </a>
+                <a href="/messages" class="nav-link">
+                    <i class="fas fa-comments"></i> messages
+                </a>
+                <a href="/logout" class="nav-link">
+                    <i class="fas fa-sign-out-alt"></i> logout
+                </a>
+            </nav>
+        </header>
+        
+        <main class="main-content">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <p></p>
+                </div>
+                
+                <form id="profileForm" class="profile-form" enctype="multipart/form-data">
+                    <div class="avatar-section">
+                        <div class="avatar-preview" id="avatarPreview">
+                            <img id="avatarImage" src="/static/default-avatar.png" alt="Avatar">
+                        </div>
+                        <div class="avatar-controls">
+                            <div class="file-upload-container">
+                                <input type="file" id="avatarFile" name="avatar" accept=".jpg,.jpeg,.png,.gif" class="file-input">
+                                <label for="avatarFile" class="btn btn-secondary file-upload-label">
+                                    <i class="fas fa-upload"></i> upload picture
+                                </label>
+                                <span class="file-info" id="fileInfo">no picture chosen</span>
+                            </div>
+                            <p class="upload-hint"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="username">
+                            <i class="fas fa-at"></i> username
+                        </label>
+                        <input type="text" id="username" name="username" readonly 
+                               class="readonly-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bio">
+                            <i class="fas fa-edit"></i> bio
+                        </label>
+                        <textarea id="bio" name="bio" rows="4" 
+                                  placeholder="bio"></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> save profile
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="resetBtn">
+                            <i class="fas fa-undo"></i> Reset
+                        </button>
+                    </div>
+                </form>
+                
+                <div id="message" class="message hidden"></div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p></p>
+        </footer>
+    </div>
+    
+    <script src="/static/js/profile.js"></script>
+</body>
+</html>

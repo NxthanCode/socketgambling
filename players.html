@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-dice"></i>
+                <span>Socket Gambling</span>
+            </div>
+            <nav class="nav">
+                <a href="/profile" class="nav-link">
+                    <i class="fas fa-user"></i> profile
+                </a>
+                <a href="/players" class="nav-link active">
+                    <i class="fas fa-users"></i> players
+                </a>
+                <a href="/messages" class="nav-link">
+                    <i class="fas fa-comments"></i> messages
+                </a>
+                <a href="/logout" class="nav-link">
+                    <i class="fas fa-sign-out-alt"></i> logout
+                </a>
+            </nav>
+        </header>
+        
+        <main class="main-content">
+            <div class="players-container">
+                <div class="players-header">
+                    <h1><i class="fas fa-users"></i> players</h1>
+                </div>
+                
+                <div class="players-filters">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">players</button>
+                        <button class="filter-btn" data-filter="online">online</button>
+                        <button class="filter-btn" data-filter="offline">offline</button>
+                    </div>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="playerSearch" placeholder="search players...">
+                    </div>
+                </div>
+                
+                <div class="players-grid" id="playersGrid">
+                    <div class="loading-players">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>loading players..</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p></p>
+        </footer>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js"></script>
+    <script src="/static/js/players.js"></script>
+</body>
+</html>
